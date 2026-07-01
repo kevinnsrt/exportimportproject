@@ -11,5 +11,8 @@
       "src": "/(.*)",
       "dest": "importexportproject/wsgi.py"
     }
-  ]
+  ],
+  "scripts": {
+    "vercel-build": "python3 -m pip install -r requirements.txt && python3 manage.py migrate"
+  }
 }
