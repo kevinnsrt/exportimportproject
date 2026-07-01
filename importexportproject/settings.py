@@ -10,7 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
-from pathlib import Path
+import os
 import dj_database_url
 from pathlib import Path
 
@@ -86,7 +86,7 @@ WSGI_APPLICATION = 'importexportproject.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
-if os.environ.get('postgresql://neondb_owner:npg_k7s5TEXZHtrn@ep-billowing-art-atlcvneh-pooler.c-9.us-east-1.aws.neon.tech/neondb?channel_binding=require&sslmode=require'):
+if os.environ.get('DATABASE_URL'):
     DATABASES = {
         'default': dj_database_url.config(
             conn_max_age=600,
